@@ -94,7 +94,21 @@ void oddeven()
         System.out.println("odd number");
     }
 }
+void reverse()
+{
+    Scanner sc=new Scanner(Syste,.in);
+    System.out.println("enter the number to reverse");
+    int x=sc.nextInt();
+    int reverse=0;
+    while(x!=0)
+    {
+       int reminder =x % 10;
+       reverse=reverse*10+reminder;
+       x=x/10;
 
+    }
+    System.out.println("reversed number is ="+reverse);
+}
 
 
     }
