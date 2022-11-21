@@ -3,7 +3,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args)
     {
-
+Scanner sc=new Scanner(System.in);
         System.out.println("Enter 3 numbers");
         System.out.println("Enter 1 to find largest among 3 numbers");
         System.out.println("Enter 2 to find smallest among 3 numbers");
@@ -11,9 +11,29 @@ public class Main {
         System.out.println("Enter 4 to check even or odd");
         System.out.println("Enter 5 to reverse a number");
         System.out.println("Enter 6 to exit");
+        int z=sc.nextInt();
+        switch(z)
+        {
+            case 1: largest();
+                break;
+            case 2: smallest();
+                break;
+            case 3: prime();
+                break;
+            case 4: oddeven();
+                break;
+            case 5: reverse();
+                break;
+            case 6:
+                System.exit(0);
+                break;
+            default:
+                System.out.println("wrong input");
+        }
+
     }
 
-    void largest()
+  static  void largest()
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter 3 numbers");
@@ -22,21 +42,21 @@ public class Main {
         int z=sc.nextInt();
         if(x>y && x>z)
         {
-            System.out.println("x is larger");
+            System.out.println(x+" is larger");
 
         }
         if(y>x && y>z)
         {
-            System.out.println("y is greater");
+            System.out.println(y+" is larger");
         }
         if(z>x && z>y)
         {
-            System.out.println("z is greater");
+            System.out.println(z+" is larger");
         }
 
     }
 
-    void smallest()
+   static void smallest()
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("Enter 3 numbers");
@@ -45,41 +65,41 @@ public class Main {
         int z=sc.nextInt();
         if(x<y && x<z)
         {
-            System.out.println("x is smallest");
+            System.out.println(x+" is smallest");
 
         }
         if(y<x && y<z)
         {
-            System.out.println("y is smallest");
+            System.out.println(y+" is smallest");
         }
         if(z<x && z<y)
         {
-            System.out.println("z is smallest");
+            System.out.println(z+" is smallest");
         }
 
     }
 
-    void prime()
+  static  void prime()
     {
         Scanner sc=new Scanner(System.in);
         System.out.println("enter the number");
         int flag=0;
 
         int x=sc.nextInt();
-        for (int i = 2; i < x; i++)
-            if (x % i == 0)
-            {
-                System.out.println("prime number");
-                flag=1;
-                break;
-                }
-                else
-                {
-                    System.out.println("not prime number");
+        if(x==0||x==1){
+            System.out.println(x+" is not prime number");
+        }else{
+            for(int i=2;i<=x;i++){
+                if(x%i==0){
+                    System.out.println(x+" is not prime number");
+                    flag=1;
+                    break;
                 }
             }
+            if(flag==0)  { System.out.println(x+" is prime number"); }
+        }}
 
-void oddeven()
+ static void oddeven()
 {
     Scanner sc=new Scanner(System.in);
     System.out.println("enter the number");
@@ -94,9 +114,9 @@ void oddeven()
         System.out.println("odd number");
     }
 }
-void reverse()
+static void reverse()
 {
-    Scanner sc=new Scanner(Syste,.in);
+    Scanner sc=new Scanner(System.in);
     System.out.println("enter the number to reverse");
     int x=sc.nextInt();
     int reverse=0;
